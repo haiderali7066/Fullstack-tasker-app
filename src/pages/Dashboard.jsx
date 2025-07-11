@@ -157,13 +157,13 @@ export default function Dashboard() {
             <div className="mt-2 flex gap-2">
               <button
                 onClick={() => handleToggleStatus(task)}
-                className="bg-yellow-500 text-white px-3 py-1"
+                className="bg-yellow-500 rounded-md text-white px-3 py-1"
               >
                 Change Status
               </button>
               <button
                 onClick={() => handleEdit(task)}
-                className="bg-green-600 text-white px-3 py-1"
+                className="bg-green-600 rounded-md text-white px-3 py-1"
               >
                 Edit Msg
               </button>
