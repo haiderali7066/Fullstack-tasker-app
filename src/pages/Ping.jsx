@@ -4,7 +4,7 @@ import axios from "axios";
 function App() {
   useEffect(() => {
     axios
-      .get("taskerapp-backend-production.up.railway.app/ping")
+      .get("https://taskerapp-backend-production.up.railway.app/ping")
       .then((res) => {
         console.log("✅ Backend connected:", res.data);
       })
