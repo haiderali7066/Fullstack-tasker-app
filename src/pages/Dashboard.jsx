@@ -169,7 +169,7 @@ export default function Dashboard() {
               </button>
               <button
                 onClick={() => handleDelete(task._id)}
-                className="bg-red-600 text-white px-3 py-1"
+                className="bg-red-600 text-white rounded-md px-3 py-1"
               >
                 Delete Task
               </button>
