@@ -5,8 +5,8 @@ export default function Landing() {
     <div className="text-center mt-20">
       <h1 className="text-4xl font-bold">
         Welcome to MERN Tasker App By Haider <br />
-        We need authentication to provide access
       </h1>
+      <p> We need authentication to provide access</p>
       <div className="mt-8 space-x-4">
         <Link to="/login" className="bg-blue-500 text-white px-4 py-2 rounded">
           Login
