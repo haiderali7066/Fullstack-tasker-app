@@ -159,19 +159,19 @@ export default function Dashboard() {
                 onClick={() => handleToggleStatus(task)}
                 className="bg-yellow-500 text-white px-3 py-1"
               >
-                Change
+                Change Status
               </button>
               <button
                 onClick={() => handleEdit(task)}
                 className="bg-green-600 text-white px-3 py-1"
               >
-                Edit
+                Edit Msg
               </button>
               <button
                 onClick={() => handleDelete(task._id)}
                 className="bg-red-600 text-white px-3 py-1"
               >
-                Delete
+                Delete Task
               </button>
             </div>
           </li>
