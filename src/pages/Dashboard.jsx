@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState({ title: "", description: "" });
-  const [loading, setLoading] = useState(true);
+  const [tasks, setTasks] = useState([]); // for tasks
+  const [newTask, setNewTask] = useState({ title: "", description: "" }); // for input fields
+  const [loading, setLoading] = useState(true); // for loading
   const [editingTaskId, setEditingTaskId] = useState(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Dashboard() {
   const fetchTasks = async () => {
     try {
       const res = await axios.get(
-        "https://taskerapp-backend-production.up.railway.app/api/tasks"
+        "https://fullstack-tasker-app.vercel.app/api/tasks"
       );
       setTasks(res.data);
       setLoading(false);
@@ -34,7 +34,7 @@ export default function Dashboard() {
     if (!newTask.title) return;
     try {
       await axios.post(
-        "https://taskerapp-backend-production.up.railway.app/api/tasks",
+        "https://fullstack-tasker-app.vercel.app/api/tasks",
         newTask
       );
       setNewTask({ title: "", description: "" });
@@ -47,7 +47,7 @@ export default function Dashboard() {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://taskerapp-backend-production.up.railway.app/api/tasks/${id}`
+        `https://fullstack-tasker-app.vercel.app/api/tasks/${id}`
       );
       fetchTasks();
     } catch (err) {
@@ -58,7 +58,7 @@ export default function Dashboard() {
   const handleToggleStatus = async (task) => {
     try {
       await axios.put(
-        `https://taskerapp-backend-production.up.railway.app/api/tasks/${task._id}`,
+        `https://fullstack-tasker-app.vercel.app/api/tasks/${task._id}`,
         {
           ...task,
           status: task.status === "pending" ? "done" : "pending",
@@ -78,7 +78,7 @@ export default function Dashboard() {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `https://taskerapp-backend-production.up.railway.app/api/tasks/${editingTaskId}`,
+        `https://fullstack-tasker-app.vercel.app/api/tasks/${editingTaskId}`,
         newTask
       );
       setEditingTaskId(null);

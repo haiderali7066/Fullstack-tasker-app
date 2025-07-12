@@ -10,14 +10,11 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      await axios.post(
-        "https://taskerapp-backend-production.up.railway.app/register",
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      await axios.post("https://fullstack-tasker-app.vercel.app/register", {
+        name,
+        email,
+        password,
+      });
       navigate("/login");
     } catch (err) {
       alert(err.response?.data?.error || "Registration failed");

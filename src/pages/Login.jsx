@@ -10,7 +10,7 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        "https://taskerapp-backend-production.up.railway.app/login",
+        "https://fullstack-tasker-app.vercel.app/login",
         {
           email,
           password,
